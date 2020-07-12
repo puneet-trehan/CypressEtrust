@@ -37,9 +37,7 @@ describe('Etrust Test', function () {
                         cy.log("Grade greater than zero :" + $element.find('.shop-name')[0].innerText + "," + $element.find('.shop-mark')[0].innerText)
                     }
                 })            
-                if($nextPaginationLink.hasClass('disabled')){
-                    i = 999         
-                        
+                if($nextPaginationLink.hasClass('disabled')){                        
                 }else {                                       
                     cy.get('.pagination-next').click()
                 }
