@@ -21,7 +21,7 @@ describe('Etrust Test', function () {
     })
     
 
-    it('Has moreReview grade',  () => {
+   it('Has moreReview grade',  () => {
         cy.visit('https://qa.trustedshops.de/shops/?cat=bekleidung')
         cy.wait(2000)       
         let i = 0
@@ -37,10 +37,7 @@ describe('Etrust Test', function () {
                         cy.log("Grade greater than zero :" + $element.find('.shop-name')[0].innerText + "," + $element.find('.shop-mark')[0].innerText)
                     }
                 })            
-                if($nextPaginationLink.hasClass('disabled')){                        
-                }else {                                       
-                    cy.get('.pagination-next').click()
-                }
+                
             }) 
        }
         
