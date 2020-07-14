@@ -11,7 +11,7 @@ describe('Etrust Test', function () {
         cy.visit('https://qa.trustedshops.de/shops/?cat=bekleidung')
         cy.wait(2000)
 
-        cy.get('.results-list').find('.shop-details').each(($element, index, $list) => {
+        cy.get('.results-list').find('.shop-details').each(($element) => {
             if($element.find('.shop-mark')[0].innerText == '0.00'){
                 cy.log("Grade equal to zero :" + $element.find('.shop-name')[0].innerText + "," + $element.find('.shop-mark')[0].innerText)
             }else{
@@ -30,7 +30,7 @@ describe('Etrust Test', function () {
             cy.log(i)           
             cy.get('.pagination-next').then(($nextPaginationLink) => {    
                 cy.wait(2000)
-                cy.get('.results-list').find('.shop-details').each(($element, index, $list) => {
+                cy.get('.results-list').find('.shop-details').each(($element) => {
                     if($element.find('.shop-mark')[0].innerText == '0.00'){
                         cy.log("Grade equal to zero :" + $element.find('.shop-name')[0].innerText + "," + $element.find('.shop-mark')[0].innerText)
                     }else{
